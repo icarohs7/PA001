@@ -32,16 +32,16 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.0.0-rc02"
+        kotlinCompilerExtensionVersion = "1.0.0"
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 }
 
@@ -51,12 +51,12 @@ dependencies {
     implementation("com.google.android.material:material:1.4.0")
 
     //Compose
-    implementation("androidx.compose.ui:ui:1.0.0-rc02")
-    implementation("androidx.compose.ui:ui-tooling:1.0.0-rc02")
-    implementation("androidx.compose.foundation:foundation:1.0.0-rc02")
-    implementation("androidx.compose.material:material:1.0.0-rc02")
-    implementation("androidx.compose.material:material-icons-core:1.0.0-rc02")
-    implementation("androidx.compose.material:material-icons-extended:1.0.0-rc02")
+    implementation("androidx.compose.ui:ui:1.0.0")
+    implementation("androidx.compose.ui:ui-tooling:1.0.0")
+    implementation("androidx.compose.foundation:foundation:1.0.0")
+    implementation("androidx.compose.material:material:1.0.0")
+    implementation("androidx.compose.material:material-icons-core:1.0.0")
+    implementation("androidx.compose.material:material-icons-extended:1.0.0")
 
     //Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
@@ -66,5 +66,5 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.0.0-rc02")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.0.0")
 }
