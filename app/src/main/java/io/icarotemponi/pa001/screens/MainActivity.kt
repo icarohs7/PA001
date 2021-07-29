@@ -17,6 +17,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import io.icarotemponi.pa001.R
+import io.icarotemponi.pa001.screens.rentcalculator.RentCalculatorPage
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,9 +26,9 @@ class MainActivity : ComponentActivity() {
             AppContainer {
                 NavHost(
                     navController = rememberNavController(),
-                    startDestination = "timecounter",
+                    startDestination = "rentcalculator",
                     builder = {
-                        composable("timecounter", content = { Text("Hello, World!") })
+                        composable("rentcalculator", content = { RentCalculatorPage() })
                     }
                 )
             }
