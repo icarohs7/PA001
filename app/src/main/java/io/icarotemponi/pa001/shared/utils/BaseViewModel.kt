@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 
-class BaseViewModel<T>(initialState: T) : ViewModel() {
+abstract class BaseViewModel<T>(initialState: T) : ViewModel() {
     private val state = MutableStateFlow(initialState)
 
     @Composable

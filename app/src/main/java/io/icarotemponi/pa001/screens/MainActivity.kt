@@ -24,8 +24,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AppContainer {
+                val navController = rememberNavController()
                 NavHost(
-                    navController = rememberNavController(),
+                    navController = navController,
                     startDestination = "rentcalculator",
                     builder = {
                         composable("rentcalculator", content = { RentCalculatorPage() })
