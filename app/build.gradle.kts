@@ -51,10 +51,9 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.3.1")
     implementation("com.google.android.material:material:1.4.0")
 
-    implementation("com.airbnb.android:mavericks:2.3.0")
-    implementation("com.airbnb.android:mavericks-compose:2.1.0-alpha01")
+    implementation("io.insert-koin:koin-android:3.1.2")
+    implementation("io.insert-koin:koin-androidx-compose:3.1.2")
 
-    //Compose
     implementation("androidx.compose.ui:ui:1.0.0")
     implementation("androidx.compose.ui:ui-tooling:1.0.0")
     implementation("androidx.compose.foundation:foundation:1.0.0")
@@ -62,16 +61,13 @@ dependencies {
     implementation("androidx.compose.material:material-icons-core:1.0.0")
     implementation("androidx.compose.material:material-icons-extended:1.0.0")
 
-    //Navigation
     implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
     implementation("androidx.navigation:navigation-compose:2.4.0-alpha05")
 
-    //Room
     implementation("androidx.room:room-runtime:2.3.0")
     implementation("androidx.room:room-ktx:2.3.0")
     kapt("androidx.room:room-compiler:2.3.0")
 
-    //Test
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
