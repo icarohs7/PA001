@@ -7,8 +7,6 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.ScaffoldState
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Calculate
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -50,7 +48,7 @@ fun AppDrawer(
                 selected = route.route == currentRoute,
                 onItemClick = {
                     navController.navigate(route.route) {
-                        popUpTo(DrawerRoute.RentCalculator.route) {
+                        popUpTo(DrawerRoute.values().first().route) {
                             saveState = true
                             // inclusive = true --enable at version alpha-06
                         }
@@ -96,5 +94,4 @@ fun DrawerNavItem(route: DrawerRoute, selected: Boolean, onItemClick: (DrawerRou
 }
 
 enum class DrawerRoute(val title: String, val route: String, val icon: ImageVector) {
-    RentCalculator("Rent Calculator", "rentcalculator", Icons.Filled.Calculate)
 }

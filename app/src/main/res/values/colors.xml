@@ -11,6 +11,6 @@
     <color name="primary">@color/red_dark</color>
     <color name="primary_variant">@color/red_light</color>
     <color name="on_secondary">@color/white</color>
-    <color name="secondary">@color/blue_dark</color>
-    <color name="secondary_variant">@color/blue_light</color>
+    <color name="secondary">@color/red_dark</color>
+    <color name="secondary_variant">@color/red_light</color>
 </resources>

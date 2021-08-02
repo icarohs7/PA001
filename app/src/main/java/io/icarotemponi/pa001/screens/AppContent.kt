@@ -14,9 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import io.icarotemponi.pa001.R
-import io.icarotemponi.pa001.screens.rentcalculator.RentCalculatorPage
 
 @Composable
 fun AppContent(navController: NavHostController) {
@@ -24,10 +22,6 @@ fun AppContent(navController: NavHostController) {
         navController = navController,
         startDestination = "rentcalculator",
         builder = {
-            composable(
-                route = DrawerRoute.RentCalculator.route,
-                content = { RentCalculatorPage() }
-            )
         }
     )
 }
@@ -53,8 +47,10 @@ fun AppContainer(
         colors = darkColors(
             primary = colorResource(id = R.color.primary),
             primaryVariant = colorResource(id = R.color.primary_variant),
+            onPrimary = colorResource(id = R.color.on_primary),
             secondary = colorResource(id = R.color.secondary),
             secondaryVariant = colorResource(id = R.color.secondary_variant),
+            onSecondary = colorResource(id = R.color.on_secondary),
         )
     )
 }
