@@ -3,72 +3,29 @@ package io.icarotemponi.pa001.screens
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
+import androidx.compose.material.DrawerValue
+import androidx.compose.material.Scaffold
+import androidx.compose.material.rememberDrawerState
+import androidx.compose.material.rememberScaffoldState
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.navigation.compose.rememberNavController
-import io.icarotemponi.pa001.R
-import io.icarotemponi.pa001.screens.rentcalculator.RentCalculatorPage
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Closed))
+            val scope = rememberCoroutineScope()
+            val navController = rememberNavController()
+
             AppContainer {
-                val navController = rememberNavController()
-                NavHost(
-                    navController = navController,
-                    startDestination = "rentcalculator",
-                    builder = {
-                        composable("rentcalculator", content = { RentCalculatorPage() })
-                    }
+                Scaffold(
+                    scaffoldState = scaffoldState,
+                    topBar = { AppBar(scaffoldState, scope) },
+                    drawerContent = { AppDrawer(navController, scope, scaffoldState) },
+                    content = { AppContent(navController) }
                 )
             }
         }
     }
-}
-
-@Composable
-private fun AppContainer(content: @Composable() () -> Unit) {
-    MaterialTheme(
-        content = {
-            Scaffold(
-                topBar = {
-                    TopAppBar(
-                        title = { Text("PA001", textAlign = TextAlign.Center) }
-                    )
-                },
-                content = {
-                    content()
-                }
-            )
-        },
-        typography = Typography(
-            body1 = TextStyle(
-                fontFamily = FontFamily.Default,
-                fontWeight = FontWeight.Normal,
-                fontSize = 16.sp
-            )
-        ),
-        shapes = Shapes(
-            small = RoundedCornerShape(4.dp),
-            medium = RoundedCornerShape(4.dp),
-            large = RoundedCornerShape(0.dp)
-        ),
-        colors = darkColors(
-            primary = colorResource(id = R.color.primary),
-            primaryVariant = colorResource(id = R.color.primary_variant),
-            secondary = colorResource(id = R.color.secondary),
-            secondaryVariant = colorResource(id = R.color.secondary_variant),
-        )
-    )
 }

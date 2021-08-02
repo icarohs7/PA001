@@ -1,6 +1,5 @@
 package io.icarotemponi.pa001.screens.rentcalculator
 
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
 import io.icarotemponi.pa001.shared.models.PATimeInterval
@@ -10,7 +9,6 @@ fun RentCalculatorPage() {
     val viewModel: RentCalculatorViewModel = viewModel()
     val state = viewModel.collectAsState()
 
-    Text("Hello, World!")
 }
 
 @Composable
